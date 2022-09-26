@@ -1,0 +1,9 @@
+{
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "c:\\Users\\The_C\\OneDrive\\Documents\\DndCombatSim\\install\\bin",
+            "binaryPath": "c:\\Users\\The_C\\OneDrive\\Documents\\DndCombatSim\\install\\bin\\CombatSim",
+            "binaryArgs": []
+        }
+    ]
+}
