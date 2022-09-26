@@ -3,13 +3,13 @@
 
 
 class Entity{
-    private:
+    private: 
         int hp, ac;
         short int stats[6];
         bool saving_throws[6];
         short int proficiency;
 
-    public:
+    public: 
         Entity();
         Entity(int hp, int ac);
         Entity(int hp, int ac, short int str, short int dex, short int con, short int inte, short int wis, short int cha);
@@ -20,7 +20,8 @@ class Entity{
         void set_saving_throw(bool stats[6]);
         void get_modifier(short int select);
         short int get_proficiency();
-        int get_hp(){return hp;}
+
+        int get_hp(){return hp;} //The purpose of get and set is so it is hard to fuck up the value by modifying it directly
         void set_hp(int hp);
         int get_ac(){return ac;}
         void set_ac(int ac);
