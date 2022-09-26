@@ -9,8 +9,7 @@ depend: setup
 	g++ -c -o $(OBJS)\Entity.o Entity.cpp
 setup: clean
 	mkdir $(OBJS)
-	mkdir $(BIN)
 
 clean:
-	rmdir /S /Q $(INSTALL)
+	rmdir /S /Q $(OBJS)
 	
