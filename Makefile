@@ -13,4 +13,4 @@ setup: clean
 
 clean:
 	rmdir /S /Q $(INSTALL)
-	cls
+	
