@@ -1,8 +1,5 @@
-#include<vector>
 #include"Entity.h"
-#include"Item.h"
-#include"Weapon.h"
-#include"Spell.h"
+
 
 
     Entity::Entity(){
@@ -47,9 +44,11 @@ void Entity::set_saving_throw(bool stats[6]){
 }
 short int Entity::get_modifier(short int select){return stats[select]/2-5;}
 short int Entity::get_proficiency(){return proficiency;}
+
 void Entity::set_hp(int hp){this->hp=hp;}
+void Entity::hit(int dmg){hp=hp-dmg;}
 void Entity::set_ac(int ac){this->ac=ac;}
 
-void Entity::equipt(Item item){
-    this->item.push_back(item);
+void Entity::equipt(Item *item){
+    this->item.push_back(*item);
 }

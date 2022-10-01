@@ -1,6 +1,9 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include<iostream>
+#include<vector>
+#include"Inventory/Item.h"
 
 class Entity{
     private: 
@@ -11,7 +14,6 @@ class Entity{
         std::string name;
         std::vector<Item> item;
         std::vector<Weapon> weapon;
-        std::vector<Spell> spell;
 
     public: 
         Entity(); //initializes the object
@@ -30,11 +32,12 @@ class Entity{
 
         int get_hp(){return hp;} //The purpose of get and set is so it is hard to fuck up the value by modifying it directly
         void set_hp(int hp);
-        
+        void hit(int dmg);
+
         int get_ac(){return ac;}
         void set_ac(int ac);
 
-        void equipt(Item item);
+        void equipt(Item *item);
 };
 
 

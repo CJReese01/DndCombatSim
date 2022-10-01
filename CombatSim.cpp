@@ -1,6 +1,6 @@
 #include<iostream>
 #include"Entity.h"
-#include"Inventory/Weapon.h"
+#include"Inventory/Item.h"
 
 
 int main(){
