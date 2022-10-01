@@ -8,6 +8,10 @@ class Entity{
         short int stats[6]; //short int is the same as int, but requires less space and doesn't count as high
         bool saving_throws[6];
         short int proficiency;
+        std::string name;
+        std::vector<Item> item;
+        std::vector<Weapon> weapon;
+        std::vector<Spell> spell;
 
     public: 
         Entity(); //initializes the object
@@ -29,6 +33,8 @@ class Entity{
         
         int get_ac(){return ac;}
         void set_ac(int ac);
+
+        void equipt(Item item);
 };
 
 
