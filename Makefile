@@ -9,8 +9,8 @@ run: depend
 
 depend: setup
 	g++ -c -o $(INVIN)\Damage.o Inventory\Damage.cpp
-	g++ -c -o $(INVIN)\Item.o Inventory\Item.cpp $(INVIN)\Damage.o
-	g++ -c -o $(OBJS)\Entity.o Entity.cpp $(INVIN)\Item.o
+	g++ -c -o $(INVIN)\Item.o Inventory\Item.cpp
+	g++ -c -o $(OBJS)\Entity.o Entity.cpp
 setup: clean
 	mkdir $(OBJS)
 	mkdir $(INVIN)

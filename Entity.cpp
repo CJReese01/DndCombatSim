@@ -1,7 +1,5 @@
 #include"Entity.h"
 
-
-
     Entity::Entity(){
         hp=1;
         ac=0;
@@ -49,6 +47,17 @@ void Entity::set_hp(int hp){this->hp=hp;}
 void Entity::hit(int dmg){hp=hp-dmg;}
 void Entity::set_ac(int ac){this->ac=ac;}
 
-void Entity::equipt(Item *item){
-    this->item.push_back(*item);
+void Entity::pack(Item item){
+    inventory.push_back(item);
+}
+void Entity::equipt(Weapon weapon){
+    if(weapon.is_melee)
+        melee_weapon->set_dmg(weapon.dmg->get_num_dmg_die(),weapon.dmg->get_dmg_die(),weapon.dmg->get_bonus_dmg());
+    else
+        range_weapon->set_dmg(weapon.dmg->get_num_dmg_die(),weapon.dmg->get_dmg_die(),weapon.dmg->get_bonus_dmg());
+}
+
+void Entity::melee_attack(Entity target){
+    if(target.get_ac()<roll(20)+melee_weapon->get_to_hit())
+        target.hit(melee_weapon->attack());
 }

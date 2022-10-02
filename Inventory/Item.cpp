@@ -1,7 +1,5 @@
-#include<iostream>
-
 #include"Item.h"
-#include"../Roll.h"
+
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Item~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 void Item::set_name(std::string name){
     this->name=name;

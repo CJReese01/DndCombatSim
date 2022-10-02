@@ -4,7 +4,7 @@
 #include<iostream>
 #include<vector>
 #include"Inventory/Item.h"
-
+//#include"Roll.h" 
 class Entity{
     private: 
         int hp, ac;
@@ -12,8 +12,9 @@ class Entity{
         bool saving_throws[6];
         short int proficiency;
         std::string name;
-        std::vector<Item> item;
-        std::vector<Weapon> weapon;
+        std::vector<Item> inventory;
+        Weapon *melee_weapon;
+        Weapon *range_weapon;
 
     public: 
         Entity(); //initializes the object
@@ -37,7 +38,10 @@ class Entity{
         int get_ac(){return ac;}
         void set_ac(int ac);
 
-        void equipt(Item *item);
+        void pack(Item item);
+        void equipt(Weapon weapon);
+
+        void melee_attack(Entity target);
 };
 
 
