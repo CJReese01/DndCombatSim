@@ -24,6 +24,7 @@ class Weapon: public Item{
         bool is_finesse=false;
         bool is_melee=true;
         Damage *dmg;
+        Weapon();
         Weapon(int num_dmg_die,int dmg_die,int bonus_dmg);
         void set_dmg(int num_dmg_die,int dmg_die,int bonus_dmg);
         void set_to_hit(int to_hit);

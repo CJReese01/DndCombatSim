@@ -51,10 +51,14 @@ void Entity::pack(Item item){
     inventory.push_back(item);
 }
 void Entity::equipt(Weapon weapon){
-    if(weapon.is_melee)
+    if(weapon.is_melee){
+        std::cout<<melee_weapon->dmg->get_dmg_type()<<std::endl;
         melee_weapon->set_dmg(weapon.dmg->get_num_dmg_die(),weapon.dmg->get_dmg_die(),weapon.dmg->get_bonus_dmg());
-    else
+        std::cout<<melee_weapon->dmg->get_bonus_dmg()<<std::endl;
+        }
+    else{
         range_weapon->set_dmg(weapon.dmg->get_num_dmg_die(),weapon.dmg->get_dmg_die(),weapon.dmg->get_bonus_dmg());
+    }
 }
 
 void Entity::melee_attack(Entity target){

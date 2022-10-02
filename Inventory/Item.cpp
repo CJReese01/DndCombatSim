@@ -12,6 +12,9 @@ std::string Item::get_name(){return name;}
 int Item::get_value(){return value;}
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Weapon~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Weapon::Weapon(){
+    set_dmg(1,6,0);
+}
 Weapon::Weapon(int num_dmg_die,int dmg_die,int bonus_dmg){
     set_dmg(num_dmg_die,dmg_die,bonus_dmg);
 }
@@ -28,4 +31,3 @@ void Weapon::set_to_hit(int to_hit){
 int Weapon::attack(){
     return roll(dmg->get_num_dmg_die(), dmg->get_dmg_die())+dmg->get_bonus_dmg();
 }
-

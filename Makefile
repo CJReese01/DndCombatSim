@@ -2,12 +2,13 @@ INSTALL=install
 OBJS=$(INSTALL)\objs
 BIN=$(INSTALL)\bin
 INVIN=$(OBJS)\Inventory
-EVERYTHING =$(OBJS)\Entity.o $(INVIN)\Item.o $(INVIN)\Damage.o
+EVERYTHING =$(OBJS)\Entity.o $(INVIN)\Item.o $(INVIN)\Damage.o $(OBJS)\Roll.o
 
 run: depend
 	g++ -o $(BIN)\CombatSim CombatSim.cpp $(EVERYTHING)
 
 depend: setup
+	g++ -c -o $(OBJS)\Roll.o Roll.cpp
 	g++ -c -o $(INVIN)\Damage.o Inventory\Damage.cpp
 	g++ -c -o $(INVIN)\Item.o Inventory\Item.cpp
 	g++ -c -o $(OBJS)\Entity.o Entity.cpp

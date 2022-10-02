@@ -8,6 +8,7 @@ int main(){
     Goblin.melee_attack(Bonk);
     Weapon sword(1,6,5);
     Goblin.equipt(sword);
+    std::cout<<"Bonk's been hit!";
     std::cout<<Bonk.get_hp(); //to call on the methods of the class, use: object.method or object.variable
     return 0;   
 }
