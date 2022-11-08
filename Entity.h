@@ -13,8 +13,8 @@ class Entity{
         short int proficiency;
         std::string name;
         std::vector<Item> inventory;
-        Weapon *melee_weapon;
-        Weapon *range_weapon;
+        Weapon *melee_weapon=NULL;
+        Weapon *range_weapon=NULL;
 
     public: 
         Entity(); //initializes the object
@@ -37,11 +37,13 @@ class Entity{
 
         int get_ac(){return ac;}
         void set_ac(int ac);
+        void rename(std::string rename);
+
 
         void pack(Item item);
-        void equipt(Weapon weapon);
+        void equipt(Weapon *weapon);
 
-        void melee_attack(Entity target);
+        void melee_attack(Entity *target);
 };
 
 
