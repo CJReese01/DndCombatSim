@@ -33,12 +33,11 @@ class Weapon: public Item{
         bool is_finesse=false;
         bool is_melee=true;
         Weapon();
-        Weapon(int num_dmg_die,int dmg_die,int bonus_dmg);
+        Weapon(int num_dmg_die,int dmg_die,int bonus_dmg,int to_hit);
         void set_dmg(int num_dmg_die,int dmg_die,int bonus_dmg);
         void set_to_hit(int to_hit);
         int get_to_hit(){return to_hit;}
         int attack();
 };
-
 
 #endif

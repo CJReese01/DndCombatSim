@@ -17,11 +17,13 @@ Weapon::Weapon(){
     dmg.num_dmg_die=1;
     dmg.dmg_die=6;
     dmg.bonus_dmg=0;
+    to_hit = 0;
 }
-Weapon::Weapon(int num_dmg_die,int dmg_die,int bonus_dmg){
+Weapon::Weapon(int num_dmg_die,int dmg_die,int bonus_dmg,int to_hit){
     dmg.num_dmg_die=num_dmg_die;
     dmg.dmg_die=dmg_die;
     dmg.bonus_dmg=bonus_dmg;
+    this->to_hit = to_hit;
 }
 void Weapon::set_dmg(int num_dmg_die,int dmg_die,int bonus_dmg){
     dmg.num_dmg_die=num_dmg_die;

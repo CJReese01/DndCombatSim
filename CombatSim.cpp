@@ -6,11 +6,11 @@
 int main(){
     initialize_roll();
     Entity Bonk(140,18,7,16,14,15,13,14); //classes are treated like variable types once they are defined
-    Entity Goblin(140,18,7,16,14,15,13,14);
+    Entity Goblin(140,18,12,16,14,15,13,14);
     Bonk.rename("Bonk");
-    Goblin.rename("Goblin1");
+    Goblin.rename("Goblin");
     Goblin.melee_attack(&Bonk);
-    Weapon sword(1,6,5);
+    Weapon sword(1,6,3,Goblin.get_modifier(0));
     Goblin.equipt(&sword);
     Goblin.melee_attack(&Bonk);
     std::cout<<"Bonk's been Attacked!"<<std::endl;

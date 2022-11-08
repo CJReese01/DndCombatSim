@@ -62,9 +62,9 @@ void Entity::equipt(Weapon *weapon){
 
 void Entity::melee_attack(Entity *target){
     int roll_to_hit = roll(20);
-        std::cout << name << " rolled " << roll_to_hit+stats[0]<<" to hit " << target->name << " ";
+        std::cout << name << " rolled " << roll_to_hit+stats[0]/2-5<<" to hit " << target->name << " ";
     if(melee_weapon==NULL){
-        if(target->get_ac()<=roll_to_hit+stats[0]){
+        if(target->get_ac()<=roll_to_hit+stats[0]/2-5){
             std::cout << "and hit for " << std::max(0,stats[0]/2-5) << " dmg."<<std::endl;
             if(roll_to_hit==20)
                 target->hit(stats[0]/2-5);
@@ -75,11 +75,14 @@ void Entity::melee_attack(Entity *target){
             std::cout << "and missed" << std::endl;
             return;}
     }
-    if(target->get_ac()<roll_to_hit+melee_weapon->get_to_hit()+stats[0]/2-5){
-        int damage = roll(melee_weapon->dmg.dmg_die)+melee_weapon->dmg.bonus_dmg;
-        std::cout << "and hit for " << damage << " dmg."<<std::endl;
-            if(roll_to_hit==20)
+    if(target->get_ac()<=roll_to_hit+melee_weapon->get_to_hit()+stats[0]/2-5){
+        int damage = roll(melee_weapon->dmg.num_dmg_die,melee_weapon->dmg.dmg_die)+melee_weapon->dmg.bonus_dmg;
+        
+            if(roll_to_hit==20){
                 damage = damage*2;
+                std::cout << ", crit, ";
+            }
+            std::cout << "and hit for " << damage << " dmg."<<std::endl;
             target->hit(damage);
             return;
         }
